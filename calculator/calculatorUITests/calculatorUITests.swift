@@ -18,13 +18,10 @@ final class calculatorUITests: XCTestCase {
     }
     
     func testAddingNumbers() {
-        // Interagir com os botões na interface do usuário
         app.buttons["1"].tap()
         app.buttons["+"].tap()
         app.buttons["2"].tap()
         app.buttons["="].tap()
-        
-        // Verificar o resultado na tela
         XCTAssert(app.staticTexts["3"].exists)
     }
 }
