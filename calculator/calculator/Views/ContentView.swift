@@ -38,13 +38,6 @@ struct ContentView: View {
         }
     }
     
-    func buttonWidt(_ button: CalculatorButton) -> CGFloat {
-        return button == .zero ? (UIScreen.main.bounds.width - 4 * 12) / 4 * 2 : (UIScreen.main.bounds.width - 5 * 12) / 4
-    }
-    
-    func buttonHeight() -> CGFloat {
-        return  (UIScreen.main.bounds.width - 5 * 12) / 4
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
