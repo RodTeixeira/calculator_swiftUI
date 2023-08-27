@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 enum CalculatorButton: String {
-    case zero, one, two, three, four, five, six, seven, heigth, nine
+    case zero, one, two, three, four, five, six, seven, eight, nine
     case equals ,plus, minus, multiply, divider
     case dot
     case ac, plusMinus, porcent
@@ -24,7 +24,7 @@ enum CalculatorButton: String {
         case .five: return "5"
         case .six: return "6"
         case .seven: return "7"
-        case .heigth: return "8"
+        case .eight: return "8"
         case .nine: return "9"
         case .equals: return "="
         case .plus: return "+"
@@ -40,7 +40,7 @@ enum CalculatorButton: String {
     
     var background: Color {
         switch self {
-        case .zero, .one, .two, .three, .four, .five, .six, .seven, .heigth, .nine, .dot:
+        case .zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .dot:
             return Color(.darkGray)
         case .ac, .plusMinus, .porcent:
             return Color(.lightGray)
@@ -56,7 +56,7 @@ class CalculatorViewModel: ObservableObject {
     
     var buttons: [[CalculatorButton]] = [
         [.ac, .plusMinus, .porcent, .divider],
-        [.seven, .heigth, .nine, .multiply],
+        [.seven, .eight, .nine, .multiply],
         [.four, .five, .six, .minus],
         [.one, .two, .three, .plus],
         [.zero, .dot, .equals]

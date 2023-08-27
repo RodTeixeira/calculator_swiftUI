@@ -9,28 +9,102 @@ import XCTest
 @testable import calculator
 
 final class calculatorTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func testInputNumber() {
+        let sut = makeSut()
+        sut.receiveInput(value: .one)
+        sut.receiveInput(value: .zero)
+        XCTAssertEqual(sut.display, "10")
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testAddition() {
+        let sut = makeSut()
+        sut.receiveInput(value: .one)
+        sut.receiveInput(value: .plus)
+        sut.receiveInput(value: .two)
+        sut.receiveInput(value: .equals)
+        XCTAssertEqual(sut.display, "3")
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testSubtraction() {
+        let sut = makeSut()
+        sut.receiveInput(value: .five)
+        sut.receiveInput(value: .minus)
+        sut.receiveInput(value: .three)
+        sut.receiveInput(value: .equals)
+        XCTAssertEqual(sut.display, "2")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testMultiplication() {
+        let sut = makeSut()
+        sut.receiveInput(value: .two)
+        sut.receiveInput(value: .multiply)
+        sut.receiveInput(value: .three)
+        sut.receiveInput(value: .equals)
+        XCTAssertEqual(sut.display, "6")
     }
+    
+    func testDivision() {
+        let sut = makeSut()
+        sut.receiveInput(value: .nine)
+        sut.receiveInput(value: .divider)
+        sut.receiveInput(value: .three)
+        sut.receiveInput(value: .equals)
+        XCTAssertEqual(sut.display, "3")
+    }
+    
+    func testClear() {
+        let sut = makeSut()
+        sut.receiveInput(value: .five)
+        sut.receiveInput(value: .ac)
+        XCTAssertEqual(sut.display, "")
+    }
+    
+    func testInvertSign() {
+        let sut = makeSut()
+        sut.receiveInput(value: .five)
+        sut.receiveInput(value: .plusMinus)
+        XCTAssertEqual(sut.display, "-5")
+    }
+    
+    
+    func testDecimalPoint() {
+        let sut = makeSut()
+        sut.receiveInput(value: .three)
+        sut.receiveInput(value: .dot)
+        sut.receiveInput(value: .five)
+        XCTAssertEqual(sut.display, "3,5")
+    }
+    
+    func testPercentage() {
+        let sut = makeSut()
+        sut.receiveInput(value: .eight)
+        sut.receiveInput(value: .porcent)
+        XCTAssertEqual(sut.display, "0.08")
+    }
+    
+    func testInvalidOperation() {
+        let sut = makeSut()
+        sut.receiveInput(value: .five)
+        sut.receiveInput(value: .plus)
+        sut.receiveInput(value: .equals)
+        XCTAssertEqual(sut.display, "5")
+    }
+    
+    func testMultipleEquals() {
+        let sut = makeSut()
+        sut.receiveInput(value: .three)
+        sut.receiveInput(value: .plus)
+        sut.receiveInput(value: .three)
+        sut.receiveInput(value: .equals)
+        sut.receiveInput(value: .equals)
+        XCTAssertEqual(sut.display, "9")
+    }
+    
+}
 
+extension calculatorTests {
+    func makeSut() -> CalculatorViewModel {
+        return CalculatorViewModel()
+    }
 }
