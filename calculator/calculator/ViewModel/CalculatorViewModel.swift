@@ -164,7 +164,7 @@ class CalculatorViewModel: ObservableObject {
     private var numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        formatter.maximumFractionDigits = 6  // Defina o número de casas decimais desejado
+        formatter.maximumFractionDigits = 6
         return formatter
     }()
     
