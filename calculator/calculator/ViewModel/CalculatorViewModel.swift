@@ -64,7 +64,7 @@ class CalculatorViewModel: ObservableObject {
     
     private var firstNumber: Float = .zero
     private var secondNumber: Float = .zero
-    private var operand: String = String.empty
+    private var operand: CalculatorButton = .ac
     private var currentNumber: String = String.empty
     private var result: Float = .zero
     
@@ -91,17 +91,17 @@ class CalculatorViewModel: ObservableObject {
         currentNumber = .empty
         firstNumber = .zero
         secondNumber = .zero
-        operand = .empty
+        operand = .ac
         result = .zero
         display = String.empty
     }
     
     private func setOperand(_ value: CalculatorButton) {
         if currentNumber.isEmpty {
-            operand = value.title
+            operand = value
         } else {
             firstNumber = currentNumber.floatValue
-            operand = value.title
+            operand = value
             currentNumber = .empty
         }
     }
@@ -143,13 +143,13 @@ class CalculatorViewModel: ObservableObject {
         secondNumber = currentNumber.floatValue
         
         switch operand {
-        case "+":
+        case .plus:
             result = firstNumber + secondNumber
-        case "-":
+        case .minus:
             result = firstNumber - secondNumber
-        case "X":
+        case .multiply:
             result = firstNumber * secondNumber
-        case "÷":
+        case .divider:
             result = firstNumber / secondNumber
         default:
             return
@@ -157,7 +157,6 @@ class CalculatorViewModel: ObservableObject {
         
         currentNumber = String(result)
         display = formattedNumber
-        operand = String.empty
     }
     
     
