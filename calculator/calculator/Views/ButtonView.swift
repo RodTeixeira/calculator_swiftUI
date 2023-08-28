@@ -11,11 +11,11 @@ import SwiftUI
 struct ButtonView: View {
     
     var button: CalculatorButton
-    @StateObject var env: CalculatorViewModel
+    @EnvironmentObject var vm: CalculatorViewModel
     
     var body: some View {
         Button(action: {
-            env.receiveInput(value: button)
+            vm.receiveInput(value: button)
         }) {
             Text(button.title)
                 .font(.system(size: 32))
@@ -38,6 +38,6 @@ struct ButtonView: View {
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView(button: CalculatorButton.zero, env: CalculatorViewModel())
+        ButtonView(button: CalculatorButton.zero)
     }
 }
