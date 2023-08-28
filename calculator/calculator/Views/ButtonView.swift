@@ -11,7 +11,7 @@ import SwiftUI
 struct ButtonView: View {
     
     var button: CalculatorButton
-    @EnvironmentObject var env: CalculatorViewModel
+    @StateObject var env: CalculatorViewModel
     
     var body: some View {
         Button(action: {
@@ -38,6 +38,6 @@ struct ButtonView: View {
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView(button: CalculatorButton.zero)
+        ButtonView(button: CalculatorButton.zero, env: CalculatorViewModel())
     }
 }
