@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var vm: CalculatorViewModel
+    @EnvironmentObject var vm: CalculatorViewModel
     
     var body: some View {
         
@@ -29,7 +29,7 @@ struct ContentView: View {
                 ForEach(vm.buttons, id: \.self) { row in
                     HStack{
                         ForEach(row, id: \.self) { button in
-                            ButtonView(button: button, env: vm)
+                            ButtonView(button: button)
                         }
                     }
                 }
@@ -42,6 +42,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(vm: CalculatorViewModel())
+        ContentView().environmentObject(CalculatorViewModel())
     }
 }
