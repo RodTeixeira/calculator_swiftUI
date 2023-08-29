@@ -15,7 +15,9 @@ struct ButtonView: View {
     
     var body: some View {
         Button(action: {
-            vm.receiveInput(value: button)
+            withAnimation(.easeInOut(duration: 0.5)) {
+                vm.receiveInput(value: button)
+            }
         }) {
             Text(button.title)
                 .font(.system(size: 32))

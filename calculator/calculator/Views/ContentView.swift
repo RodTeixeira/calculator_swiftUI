@@ -23,6 +23,7 @@ struct ContentView: View {
                     Text(vm.display)
                         .foregroundColor(.white)
                         .font(.system(size: 64))
+                        .contentTransition(.interpolate)
                     
                 }.padding()
                 
