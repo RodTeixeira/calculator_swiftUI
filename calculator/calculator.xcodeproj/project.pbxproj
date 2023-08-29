@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E21799D62A9B984000A4E883 /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21799D52A9B984000A4E883 /* String+Utilities.swift */; };
+		E2343B722A9D93BC0054B770 /* SwiftUIViewteste.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2343B712A9D93BB0054B770 /* SwiftUIViewteste.swift */; };
 		E2A08E672A9ACBFA009510BB /* calculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A08E662A9ACBFA009510BB /* calculatorApp.swift */; };
 		E2A08E692A9ACBFA009510BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A08E682A9ACBFA009510BB /* ContentView.swift */; };
 		E2A08E6B2A9ACBFB009510BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A08E6A2A9ACBFB009510BB /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		E21799D52A9B984000A4E883 /* String+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
+		E2343B712A9D93BB0054B770 /* SwiftUIViewteste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewteste.swift; sourceTree = "<group>"; };
 		E2A08E632A9ACBFA009510BB /* calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A08E662A9ACBFA009510BB /* calculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculatorApp.swift; sourceTree = "<group>"; };
 		E2A08E682A9ACBFA009510BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				E2A08E682A9ACBFA009510BB /* ContentView.swift */,
 				E2A08E952A9AE1B0009510BB /* ButtonView.swift */,
+				E2343B712A9D93BB0054B770 /* SwiftUIViewteste.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				E21799D62A9B984000A4E883 /* String+Utilities.swift in Sources */,
 				E2A08E692A9ACBFA009510BB /* ContentView.swift in Sources */,
+				E2343B722A9D93BC0054B770 /* SwiftUIViewteste.swift in Sources */,
 				E2A08E922A9AE175009510BB /* CalculatorViewModel.swift in Sources */,
 				E2A08E962A9AE1B0009510BB /* ButtonView.swift in Sources */,
 				E2A08E672A9ACBFA009510BB /* calculatorApp.swift in Sources */,
